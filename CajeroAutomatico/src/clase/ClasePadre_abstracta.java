@@ -16,14 +16,21 @@ public abstract class ClasePadre_abstracta {
     public void Operaciones() {
         int bandera = 0;
         int opcion = 0;
+        
+        //Bucle menú general
         do {
 
+            //Bucle menú 
             do {
-                System.out.println("Porfavor selecione una opcion");
+                System.out.println("-----Por favor seleccione una opción-----");
                 System.out.println("    1.Deposito de efectivo");
                 System.out.println("    2.Retiro de dinero");
                 System.out.println("    3.Saldo en la cuenta");
                 System.out.println("    4.Salir");
+                
+                System.out.println("-----------------------------------------");
+                
+                System.out.print("-Opción: ");
                 opcion = entrada.nextInt();
 
                 if (opcion >= 1 && opcion <= 4) {
@@ -35,15 +42,31 @@ public abstract class ClasePadre_abstracta {
                 }
 
             } while (bandera == 0);
+            
+            
+            
             if (opcion == 1) {
+                
+                System.out.println("   ---Deposito--- ");
+                
                  ClasePadre_abstracta mensajero=new ClaseHija_Deposito();
                  mensajero.Transaccion();
+                 
+                 
             } else if (opcion == 2) {
+                System.out.println("   ---Retiros--- ");
+                
                 ClasePadre_abstracta mensajero= new Clasehija_Retiro();
                 mensajero.Transaccion();
+                
+                
             } else if(opcion==3){
+                System.out.println("   ---Saldo--- ");
+                
                  ClasePadre_abstracta mensajero= new ClaseHija_Consulta();
                 mensajero.Transaccion();
+                
+                
             } else if(opcion==4){
                 System.out.println("---------------------");
                 System.out.println("Gracias vuelva pronto"); 
@@ -60,14 +83,14 @@ public abstract class ClasePadre_abstracta {
         retiro= entrada.nextInt();
     }
     
-    //Metdod Depostio
+    //Metodo Deposito
     public void Deposito(){
         deposito=entrada.nextInt();
     }
     public abstract void Transaccion();
     
+    
     //setter y getter
-
     public int getSaldo() {
         return saldo;
     }
