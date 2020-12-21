@@ -14,10 +14,10 @@ public abstract class ClasePadre_abstracta {
     
     Scanner entrada = new Scanner(System.in);
     
-    String[] usuarios = new String[5];
-    int[] contSaldo = new int[5];
-    int[] noCuenta = new int[5];
-
+    //private static String[] usuarios = new String[3];
+    //private static int[] contSaldo = new int[3];
+    //private static int[] noCuenta = new int[3];
+    
     public void Operaciones() {
         int bandera = 0;
         int opcion = 0;
@@ -26,16 +26,17 @@ public abstract class ClasePadre_abstracta {
         
         //Bucle menú general
         do {
+            /*
             //Vector para usuario y no. de cuenta
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 1; i++) {
                         System.out.print("Usuario: ");
                         usuarios[i] = entrada.next();
                         System.out.print("Número de cuenta: ");
                         noCuenta[i] = entrada.nextInt();
             }
-            
+            */
             //Bucle menú 
-            do {
+            //do {
                 System.out.println("-----Por favor seleccione una opción-----");
                 System.out.println("    1.Deposito de efectivo");
                 System.out.println("    2.Retiro de dinero");
@@ -56,7 +57,7 @@ public abstract class ClasePadre_abstracta {
                     System.out.println("---------------------------------------");
                 }
 
-            } while (bandera == 0);
+            //} while (bandera == 0);
             
             
             
@@ -111,7 +112,7 @@ public abstract class ClasePadre_abstracta {
     public abstract void Transaccion();
     
     
-    //setter y getter
+    //setter y getter saldo
     public int getSaldo() {
         return saldo;
     }
@@ -119,7 +120,25 @@ public abstract class ClasePadre_abstracta {
     public void setSaldo(int saldo) {
        this.saldo= saldo;
     }
+    /*
+    //getter and setter usuarios
+    public String[] getUsuarios() {
+        return usuarios;
+    }
 
+    public void setUsuarios(String[] usuarios) {
+        this.usuarios = usuarios;
+    }
     
+    //getter and setter numero de cuenta
+    public int[] getNoCuenta() {
+        return noCuenta;
+    }
+
+    public void setNoCuenta(int[] noCuenta) {
+        this.noCuenta = noCuenta;
+    }
+
+    */
 
 }
